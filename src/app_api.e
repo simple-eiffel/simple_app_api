@@ -7,6 +7,9 @@ note
 class
 	APP_API
 
+inherit
+	SIMPLE_WEB_CONSTANTS
+
 create
 	make
 
@@ -24,30 +27,28 @@ feature -- Web Server
 			-- Create new web client for HTTP requests.
 		do
 			create Result.make
-		ensure
-			result_not_void: Result /= Void
 		end
 
 	new_get_request (a_url: STRING): SIMPLE_WEB_REQUEST
 			-- Create new GET request for `a_url'.
 		require
-			url_not_void: a_url /= Void
 			url_not_empty: not a_url.is_empty
 		do
 			create Result.make_get (a_url)
 		ensure
-			result_not_void: Result /= Void
+			method_is_get: Result.method ~ Http_method_get
+			url_set: Result.url ~ a_url
 		end
 
 	new_post_request (a_url: STRING): SIMPLE_WEB_REQUEST
 			-- Create new POST request for `a_url'.
 		require
-			url_not_void: a_url /= Void
 			url_not_empty: not a_url.is_empty
 		do
 			create Result.make_post (a_url)
 		ensure
-			result_not_void: Result /= Void
+			method_is_post: Result.method ~ Http_method_post
+			url_set: Result.url ~ a_url
 		end
 
 feature -- Alpine.js Components
@@ -56,8 +57,6 @@ feature -- Alpine.js Components
 			-- Create new Alpine.js element factory.
 		do
 			create Result
-		ensure
-			result_not_void: Result /= Void
 		end
 
 	alpine: ALPINE_FACTORY
@@ -73,8 +72,6 @@ feature -- Layer Access
 			-- Returns isolated instance - only service features visible.
 		once
 			create Result.make
-		ensure
-			result_not_void: Result /= Void
 		end
 
 	foundation: FOUNDATION_API
@@ -82,8 +79,6 @@ feature -- Layer Access
 			-- Returns isolated instance - only foundation features visible.
 		once
 			create Result.make
-		ensure
-			result_not_void: Result /= Void
 		end
 
 feature -- Direct Access (Singleton Instances)
