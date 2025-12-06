@@ -18,7 +18,8 @@
 		<library name="base" location="$ISE_LIBRARY\library\base\base.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time.ecf"/>
 		<library name="net" location="$ISE_LIBRARY\library\net\net.ecf"/>
-		<!-- Service API (brings Foundation API) -->
+		<!-- Foundation and Service APIs -->
+		<library name="simple_foundation_api" location="$SIMPLE_FOUNDATION_API\simple_foundation_api.ecf"/>
 		<library name="simple_service_api" location="$SIMPLE_SERVICE_API\simple_service_api.ecf"/>
 		<!-- Application Libraries -->
 		<library name="simple_web" location="$SIMPLE_WEB\simple_web.ecf"/>
