@@ -139,19 +139,21 @@
 
         <section id="dependencies">
             <h2>Architecture</h2>
-            <pre><code>+------------------------------------------+
-| simple_app_api (Application Layer) *     |  &lt;-- You are here
-+------------------------------------------+
-                   |
-                   v
-+------------------------------------------+
-| simple_service_api (Service Layer)       |
-+------------------------------------------+
-                   |
-                   v
-+------------------------------------------+
-| simple_foundation_api (Foundation)       |
-+------------------------------------------+</code></pre>
+            <p>The API layers build on each other through inheritance:</p>
+            <div class="feature-grid">
+                <div class="feature-card" style="border-left: 4px solid #9b59b6;">
+                    <h4>APP (Application)</h4>
+                    <p>Top layer - HTTP client, Alpine.js components</p>
+                </div>
+                <div class="feature-card" style="border-left: 4px solid #27ae60;">
+                    <h4>SERVICE (inherited)</h4>
+                    <p>JWT, SMTP, SQL, CORS, rate limiting, templates, WebSocket</p>
+                </div>
+                <div class="feature-card" style="border-left: 4px solid #3498db;">
+                    <h4>FOUNDATION (inherited)</h4>
+                    <p>Base64, hashing, JSON, UUID, CSV, Markdown, validation</p>
+                </div>
+            </div>
 
             <h2>Bundled Libraries</h2>
             <table>
