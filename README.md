@@ -4,7 +4,7 @@
 
 # simple_app_api
 
-**[Documentation](https://ljr1981.github.io/simple_app_api/)** | **[GitHub](https://github.com/ljr1981/simple_app_api)**
+**[Documentation](https://simple-eiffel.github.io/simple_app_api/)** | **[GitHub](https://github.com/simple-eiffel/simple_app_api)**
 
 Unified application layer facade for Eiffel applications. Provides web client and Alpine.js components, with compositional access to service and foundation layers.
 
@@ -25,10 +25,10 @@ This library bundles the following application libraries:
 
 | Library | Purpose | Environment Variable |
 |---------|---------|---------------------|
-| [simple_web](https://github.com/ljr1981/simple_web) | HTTP client and web requests | `$SIMPLE_WEB` |
-| [simple_alpine](https://github.com/ljr1981/simple_alpine) | Alpine.js component generation | `$SIMPLE_ALPINE` |
-| [simple_service_api](https://github.com/ljr1981/simple_service_api) | Service layer (composed) | `$SIMPLE_SERVICE_API` |
-| [simple_foundation_api](https://github.com/ljr1981/simple_foundation_api) | Foundation layer (composed) | `$SIMPLE_FOUNDATION_API` |
+| [simple_web](https://github.com/simple-eiffel/simple_web) | HTTP client and web requests | `$SIMPLE_WEB` |
+| [simple_alpine](https://github.com/simple-eiffel/simple_alpine) | Alpine.js component generation | `$SIMPLE_ALPINE` |
+| [simple_service_api](https://github.com/simple-eiffel/simple_service_api) | Service layer (composed) | `$SIMPLE_SERVICE_API` |
+| [simple_foundation_api](https://github.com/simple-eiffel/simple_foundation_api) | Foundation layer (composed) | `$SIMPLE_FOUNDATION_API` |
 
 ## Installation
 
