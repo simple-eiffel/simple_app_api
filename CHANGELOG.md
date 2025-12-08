@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Testing config updates, AutoTest fixes, .gitignore cleanup
+- Add SCOOP concurrency capability
+- Migrate to simple_testing library
+- Remove redundant result_not_void postconditions
+- Rename APP to APP_API, use composition for service/foundation access
+- Update README to match simple_service_api/simple_foundation_api style
+- Initial commit: simple_app_api - Application Layer API
+
 ## [1.0.0] - 2025-12-08
 
 ### Added
