@@ -3,109 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>simple_app_api - Documentation</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-            line-height: 1.6;
-            color: #333;
-        }
-        .logo { text-align: center; margin-bottom: 2rem; }
-        .logo img { max-width: 400px; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 0.5rem; }
-        h2 { color: #34495e; margin-top: 2rem; }
-        code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
-        pre { background: #f4f4f4; padding: 1rem; border-radius: 5px; overflow-x: auto; }
-        pre code { background: none; padding: 0; }
-        table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-        th, td { border: 1px solid #ddd; padding: 0.75rem; text-align: left; }
-        th { background: #f4f4f4; }
-        a { color: #3498db; }
-        .badge { display: inline-block; padding: 0.25rem 0.5rem; background: #9b59b6; color: white; border-radius: 3px; font-size: 0.8em; }
-    </style>
+    <title>simple_app_api - Unified Application Layer for Eiffel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
-    <div class="logo">
-        <img src="images/logo.png" alt="simple_ library logo">
-    </div>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="simple_* logo" class="logo">
+        </div>
+        <h1>simple_app_api</h1>
+        <p class="tagline">Unified Application Layer for Eiffel Projects</p>
+        <div class="badges">
+            <span class="badge badge-rfc">Application Layer</span>
+            <span class="badge badge-version">v1.0.0</span>
+            <span class="badge badge-license">MIT</span>
+        </div>
+    </header>
 
-    <h1>simple_app_api</h1>
-    <p><span class="badge">Application Layer</span></p>
-    <p>Unified application layer facade for building Eiffel applications. Provides web client and Alpine.js components, plus inherited access to all service and foundation features.</p>
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#api">API Reference</a></li>
+            <li><a href="https://github.com/simple-eiffel/simple_app_api">GitHub</a></li>
+        </ul>
+    </nav>
 
-    <h2>Overview</h2>
-    <p>The <code>APP</code> class provides a single entry point to application-level services. It inherits from <code>SERVICE</code>, which inherits from <code>FOUNDATION</code>, giving you access to all three API layers through one object.</p>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                <strong>simple_app_api</strong> is the top-level unified facade that bundles all
+                application-level services for Eiffel. Instead of managing multiple library dependencies,
+                use a single APP class that provides access to:
+            </p>
+            <ul>
+                <li>HTTP client for web requests</li>
+                <li>Alpine.js component generation for reactive UIs</li>
+                <li>All service layer features (JWT, database, email, etc.)</li>
+                <li>All foundation features (Base64, hashing, JSON, UUID, etc.)</li>
+            </ul>
+            <p>This is the <strong>top of the API hierarchy</strong>: APP inherits SERVICE, which inherits FOUNDATION.</p>
+        </section>
 
-    <h2>Bundled Libraries</h2>
-    <table>
-        <tr><th>Library</th><th>Purpose</th></tr>
-        <tr><td><a href="https://simple-eiffel.github.io/simple_web/">simple_web</a></td><td>HTTP client and web requests</td></tr>
-        <tr><td><a href="https://simple-eiffel.github.io/simple_alpine/">simple_alpine</a></td><td>Alpine.js component generation</td></tr>
-        <tr><td><a href="https://simple-eiffel.github.io/simple_service_api/">simple_service_api</a></td><td>Service layer (inherited)</td></tr>
-        <tr><td><a href="https://simple-eiffel.github.io/simple_foundation_api/">simple_foundation_api</a></td><td>Foundation layer (inherited)</td></tr>
-    </table>
+        <section id="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>HTTP Client</h4>
+                    <p>Make GET, POST, PUT, DELETE requests to web APIs</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Alpine.js</h4>
+                    <p>Generate reactive UI components with x-data, x-show, x-on</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Service Layer</h4>
+                    <p>JWT, SMTP, SQL, CORS, rate limiting, templates, WebSocket</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Foundation</h4>
+                    <p>Base64, hashing, JSON, UUID, CSV, Markdown, validation</p>
+                </div>
+            </div>
+        </section>
 
-    <h2>Installation</h2>
-    <pre><code>&lt;library name="simple_app_api"
+        <section id="installation">
+            <h2>Installation</h2>
+            <p>Add simple_app_api to your ECF configuration file:</p>
+            <pre><code>&lt;library name="simple_app_api"
         location="$SIMPLE_APP_API\simple_app_api.ecf"/&gt;</code></pre>
+            <p>This single library gives you access to the entire simple_* ecosystem.</p>
+        </section>
 
-    <h2>Quick Start</h2>
-    <pre><code>local
-    app: APP
-do
-    create app.make
+        <section id="usage">
+            <h2>Quick Start</h2>
+            <div class="quick-start">
+                <pre><code><span class="keyword">local</span>
+    app: <span class="type">APP</span>
+<span class="keyword">do</span>
+    <span class="keyword">create</span> app.<span class="feature">make</span>
 
-    -- Alpine.js Components
-    factory := app.new_alpine_factory
-    div := app.alpine.div
-    div.x_data ("{count: 0}")
+    <span class="comment">-- HTTP Client</span>
+    client := app.<span class="feature">new_web_client</span>
+    request := app.<span class="feature">new_get_request</span> (<span class="string">"https://api.example.com/users"</span>)
 
-    -- Web Client
-    client := app.new_web_client
-    request := app.new_get_request ("https://api.example.com/users")
+    <span class="comment">-- Alpine.js Components</span>
+    div := app.<span class="feature">alpine</span>.<span class="feature">div</span>
+    div.<span class="feature">x_data</span> (<span class="string">"{count: 0}"</span>)
+    div.<span class="feature">x_on_click</span> (<span class="string">"count++"</span>)
 
-    -- Service layer (inherited)
-    token := app.create_token ("secret", "user", "app", 3600)
-    db := app.new_memory_database
-    cors := app.new_cors
+    <span class="comment">-- Service layer (inherited)</span>
+    token := app.<span class="feature">create_token</span> (<span class="string">"secret"</span>, <span class="string">"user"</span>, <span class="string">"app"</span>, 3600)
+    db := app.<span class="feature">new_memory_database</span>
+    cors := app.<span class="feature">new_cors</span>
 
-    -- Foundation layer (inherited)
-    encoded := app.base64_encode ("data")
-    hash := app.sha256 ("password")
-    uuid := app.new_uuid
-end</code></pre>
+    <span class="comment">-- Foundation layer (inherited)</span>
+    encoded := app.<span class="feature">base64_encode</span> (<span class="string">"data"</span>)
+    hash := app.<span class="feature">sha256</span> (<span class="string">"password"</span>)
+    uuid := app.<span class="feature">new_uuid</span>
+<span class="keyword">end</span></code></pre>
+            </div>
+        </section>
 
-    <h2>API Reference</h2>
+        <section id="api">
+            <h2>API Reference</h2>
 
-    <h3>Web Client</h3>
-    <table>
-        <tr><th>Feature</th><th>Description</th></tr>
-        <tr><td><code>new_web_client</code></td><td>Create HTTP client</td></tr>
-        <tr><td><code>new_get_request (url)</code></td><td>Create GET request</td></tr>
-        <tr><td><code>new_post_request (url)</code></td><td>Create POST request</td></tr>
-        <tr><td><code>web_client</code></td><td>Direct access (singleton)</td></tr>
-    </table>
+            <div class="api-section">
+                <h3>Web Client</h3>
+                <div class="signature">new_web_client: SIMPLE_WEB_CLIENT</div>
+                <div class="signature">new_get_request (a_url: STRING): SIMPLE_WEB_REQUEST</div>
+                <div class="signature">new_post_request (a_url: STRING): SIMPLE_WEB_REQUEST</div>
+                <div class="signature">web_client: SIMPLE_WEB_CLIENT (singleton)</div>
+            </div>
 
-    <h3>Alpine.js Components</h3>
-    <table>
-        <tr><th>Feature</th><th>Description</th></tr>
-        <tr><td><code>new_alpine_factory</code></td><td>Create Alpine.js element factory</td></tr>
-        <tr><td><code>alpine</code></td><td>Direct access to Alpine factory (singleton)</td></tr>
-    </table>
+            <div class="api-section">
+                <h3>Alpine.js Components</h3>
+                <div class="signature">new_alpine_factory: ALPINE_FACTORY</div>
+                <div class="signature">alpine: ALPINE_FACTORY (singleton)</div>
+            </div>
 
-    <h3>Inherited from SERVICE</h3>
-    <p>JWT authentication, SMTP email, SQL database, CORS handling, Rate limiting, Template rendering, WebSocket protocol</p>
+            <div class="api-section">
+                <h3>Inherited from SERVICE</h3>
+                <p>JWT authentication, SMTP email, SQL database, CORS handling, Rate limiting, Template rendering, WebSocket protocol</p>
+            </div>
 
-    <h3>Inherited from FOUNDATION</h3>
-    <p>Base64 encoding, Hashing (MD5, SHA1, SHA256, HMAC), UUID generation, JSON parsing, CSV processing, Markdown conversion, Validation, Process execution, Random generation</p>
+            <div class="api-section">
+                <h3>Inherited from FOUNDATION</h3>
+                <p>Base64 encoding, Hashing (MD5, SHA1, SHA256, HMAC), UUID generation, JSON parsing, CSV processing, Markdown conversion, Validation, Process execution, Random generation</p>
+            </div>
+        </section>
 
-    <h2>Architecture</h2>
-    <pre>
-+------------------------------------------+
-| simple_app_api (Application Layer) *     |
+        <section id="dependencies">
+            <h2>Architecture</h2>
+            <pre><code>+------------------------------------------+
+| simple_app_api (Application Layer) *     |  &lt;-- You are here
 +------------------------------------------+
                    |
                    v
@@ -116,13 +151,29 @@ end</code></pre>
                    v
 +------------------------------------------+
 | simple_foundation_api (Foundation)       |
-+------------------------------------------+
-    </pre>
++------------------------------------------+</code></pre>
 
-    <h2>License</h2>
-    <p>MIT License - Copyright (c) 2024-2025, Larry Rix</p>
+            <h2>Bundled Libraries</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Library</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><a href="https://simple-eiffel.github.io/simple_web/">simple_web</a></td><td>HTTP client and web requests</td></tr>
+                    <tr><td><a href="https://simple-eiffel.github.io/simple_alpine/">simple_alpine</a></td><td>Alpine.js component generation</td></tr>
+                    <tr><td><a href="https://simple-eiffel.github.io/simple_service_api/">simple_service_api</a></td><td>Service layer (inherited)</td></tr>
+                    <tr><td><a href="https://simple-eiffel.github.io/simple_foundation_api/">simple_foundation_api</a></td><td>Foundation layer (inherited)</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
 
-    <hr>
-    <p><a href="https://github.com/simple-eiffel/simple_app_api">GitHub Repository</a></p>
+    <footer>
+        <p>simple_app_api is part of the <a href="https://github.com/simple-eiffel">simple_*</a> library collection.</p>
+        <p class="copyright">&copy; 2024-2025 Larry Rix. MIT License.</p>
+    </footer>
 </body>
 </html>
