@@ -22,6 +22,10 @@
 		<library name="simple_foundation_api" location="$SIMPLE_FOUNDATION_API\simple_foundation_api.ecf"/>
 		<library name="simple_service_api" location="$SIMPLE_SERVICE_API\simple_service_api.ecf"/>
 		<library name="simple_web" location="$SIMPLE_WEB\simple_web.ecf"/>
+		<library name="simple_htmx" location="$SIMPLE_HTMX\simple_htmx.ecf"/>
+		<library name="simple_console" location="$SIMPLE_CONSOLE\simple_console.ecf"/>
+		<library name="simple_cli" location="$SIMPLE_CLI\simple_cli.ecf"/>
+		<library name="simple_i18n" location="$SIMPLE_I18N\simple_i18n.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time.ecf"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>

@@ -89,4 +89,41 @@ feature -- Direct Access (Singleton Instances)
 			create Result.make
 		end
 
+feature -- HTMX Elements
+
+	new_htmx,
+	htmx,
+	html: HTMX_FACTORY
+			-- Create HTMX element factory.
+		once
+			create Result
+		end
+
+feature -- Console Output
+
+	new_console,
+	console: SIMPLE_CONSOLE
+			-- Create console for colored output and cursor control.
+		once
+			create Result
+		end
+
+feature -- CLI Parsing
+
+	new_cli,
+	cli: SIMPLE_CLI
+			-- Create CLI argument parser.
+		do
+			create Result.make
+		end
+
+feature -- Internationalization
+
+	new_i18n,
+	i18n: SIMPLE_I18N
+			-- Create internationalization helper.
+		once
+			create Result.make
+		end
+
 end
