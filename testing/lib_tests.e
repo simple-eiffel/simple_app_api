@@ -3,7 +3,7 @@ note
 	author: "Larry Rix"
 
 class
-	APP_TEST_SET
+	LIB_TESTS
 
 inherit
 	ANY

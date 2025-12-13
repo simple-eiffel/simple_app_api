@@ -30,7 +30,7 @@
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="simple_app_api_tests" extends="simple_app_api">
-		<root class="APP_TEST_APP" feature="make"/>
+		<root class="TEST_APP" feature="make"/>
 		<setting name="console_application" value="true"/>
 
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing.ecf"/>
